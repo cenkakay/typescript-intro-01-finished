@@ -102,7 +102,7 @@ interface Human {
   firstName: string;
   age: number;
 
-  greet: () => void;
+  greet: (any: number) => void;
 }
 
 let max: Human;
@@ -116,9 +116,8 @@ max = {
 };
 
 class Instructor implements Human {
-  firstName: string;
-  age: number;
-  greet() {
+  constructor(public firstName: string, public age: number) {}
+  greet(number: number) {
     console.log("Hello!!!!");
   }
 }
